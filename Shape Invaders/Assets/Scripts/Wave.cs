@@ -13,9 +13,22 @@ public class Wave
         Insane
     }
 
+    [System.Serializable]
+    public class Spawn
+    {
+        public GameObject enemy;
+        public float weight;
+    }
+
     public string name;
     public Difficulty difficulty = Difficulty.Easy;
 
-    public GameObject enemy;
+    public Spawn[] spawns;
+
+    public int enemies;
+    public float delay = 1f;
+
     public float weight = 1f;
+
+ 
 }

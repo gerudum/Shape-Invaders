@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
 
+    public Follow cam;
+
     private Rigidbody2D rb;
     private Weapon weapon;
     private Animator anim;

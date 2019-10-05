@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 4789079300280188511}
   - component: {fileID: 4789079300280188514}
   - component: {fileID: 4789079300280188509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -262,6 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  fireDelay: 0.3
+  cam: {fileID: 0}
 --- !u!114 &4789079300280188514
 MonoBehaviour:
   m_ObjectHideFlags: 0

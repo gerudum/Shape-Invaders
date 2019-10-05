@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
    
     public float moveSpeed;
     public float fireDelay;
+    public float shootRange = 10f;
 
     private float fireCountdown;
     private Transform player;
@@ -30,7 +31,11 @@ public class Enemy : MonoBehaviour
 
     public void Update()
     {
-        fireCountdown -= Time.deltaTime;
+        if (InRange())
+        {
+            fireCountdown -= Time.deltaTime;
+        }
+    
         if(fireCountdown <= 0)
         {
             Fire();
@@ -45,7 +50,8 @@ public class Enemy : MonoBehaviour
 
     public void FindPlayer()
     {
-        dir = transform.position - player.position;
+        dir = player.position - transform.position;
+        dir = dir.normalized;
     }
 
     public void Aim()
@@ -68,7 +74,22 @@ public class Enemy : MonoBehaviour
 
     public void Move()
     {
-        rb.velocity = dir * moveSpeed;
+        FindPlayer();
+
+        if (!InRange())
+        {
+            rb.velocity = dir * moveSpeed;
+        } else
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+    
         Aim();
+    }
+
+   
+    private bool InRange()
+    {
+        return Physics2D.OverlapCircle(transform.position, shootRange, LayerMask.GetMask("Player"));
     }
 }

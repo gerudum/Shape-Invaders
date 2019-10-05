@@ -25,7 +25,6 @@ public class Bullet : MonoBehaviour
         anim = GetComponent<Animator>();
         
         lifeTime = Time.time + projectile.duration;
-        anim.SetFloat("duration", Time.time - lifeTime);
 
         dir = target - transform.position;
         dir.z = 0.0f;
@@ -40,7 +39,7 @@ public class Bullet : MonoBehaviour
     public void FixedUpdate()
     {
         rb.velocity = dir * projectile.speed;
-        anim.SetFloat("duration", Time.time - lifeTime);
+        anim.SetFloat("duration", lifeTime - Time.time);
     }
 
     public void Damage(Collider2D collision)
