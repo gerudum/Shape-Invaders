@@ -63,10 +63,11 @@ public class Effect : ScriptableObject
         }
     }
 }
-
+/*
 [CustomEditor(typeof(Effect))]
 public class EffectInspector : Editor
 {
+    
     public override void OnInspectorGUI()
     {
         var effect = target as Effect;
@@ -101,4 +102,4 @@ public class EffectInspector : Editor
             effect.newChargedBullet = (GameObject)EditorGUILayout.ObjectField("New Charged Bullet", effect.newChargedBullet, typeof(GameObject), false);
         }
     }
-}
+}*/

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -46,11 +48,11 @@ public class WaveManager : MonoBehaviour
         {
             difficulty = Wave.Difficulty.Normal;
         }
-        if(totalEnemiesKilled >= 100)
+        if(totalEnemiesKilled >= 80)
         {
             difficulty = Wave.Difficulty.Hard;
         }
-        if(totalEnemiesKilled >= 175)
+        if(totalEnemiesKilled >= 150)
         {
             difficulty = Wave.Difficulty.Insane;
         }
@@ -73,7 +75,7 @@ public class WaveManager : MonoBehaviour
         if(wave > bonusThreshold)
         {
             EffectManager.instance.EnableCards();
-            bonusThreshold = (int)(wave * 1.5f);
+            bonusThreshold = wave + 3;
         }
 
         StartCoroutine("SpawnWave");
@@ -159,14 +161,25 @@ public class WaveManager : MonoBehaviour
 
     public Vector3 RandomPoint()
     {
-
-        
-
         Vector2 point = Random.insideUnitCircle * spawnRadius;
+        Vector2 minDistance = new Vector2(10f, 10f);
 
         if (player == null) return point;
         
-        Vector3 newPoint = new Vector3(player.position.x + point.x, player.position.y + point.y, 0);
+        Vector3 newPoint = new Vector3(player.position.x + point.x + minDistance.x, player.position.y + point.y + minDistance.y, 0);
         return newPoint;
+    }
+
+    public GameObject gameOver;
+    public Text score;
+    public void GameOver()
+    {
+        gameOver.SetActive(true);
+        score.text = "Score: " + totalEnemiesKilled.ToString();
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

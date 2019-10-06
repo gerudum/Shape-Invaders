@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: VortexShot
   m_EditorClassIdentifier: 
   strength: 1
-  effect: 4
+  effect: 3
   statusEffect: 0
+  stat: 0
   effectName: Vortex Shot
   desc: Suck in your foes!
-  icon: {fileID: 21300000, guid: f62e1d59d3f03d049bb35119cc5d4344, type: 3}
+  icon: {fileID: -4723272830679249448, guid: 1d006b1108fed2545b476f94c767c5c0, type: 3}
+  spawnOnce: 1
   visualEffect: {fileID: 0}
-  newBullet: {fileID: 0}
-  newChargedBullet: {fileID: 0}
+  newBullet: {fileID: 4030376540867277761, guid: 187f457b74dac984982971d364300b85,
+    type: 3}
+  newChargedBullet: {fileID: 7143983313950096853, guid: 08da04922a0604249b319f1281e36ee5,
+    type: 3}

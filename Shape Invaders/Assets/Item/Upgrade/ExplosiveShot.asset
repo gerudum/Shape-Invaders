@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: ExplosiveShot
   m_EditorClassIdentifier: 
   strength: 1
-  effect: 0
+  effect: 3
   statusEffect: 0
   stat: 0
-  effectName: 
-  desc: 
-  icon: {fileID: 0}
-  spawnOnce: 0
+  effectName: Explosive Shot
+  desc: KABOOM!!!
+  icon: {fileID: 21300000, guid: 9d90a5a01ca24be4abb6f3c116115b6c, type: 3}
+  spawnOnce: 1
   visualEffect: {fileID: 0}
-  newBullet: {fileID: 0}
-  newChargedBullet: {fileID: 0}
+  newBullet: {fileID: 8024589913216300077, guid: 69effc384d1ecd14fa4767cab9b355fe,
+    type: 3}
+  newChargedBullet: {fileID: 6616533616132217807, guid: 7e92866ef79ba344e88f503352dbbe32,
+    type: 3}

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1194674552453691501, guid: c09aeeb83df364342ba45a1ccfac24a9,
         type: 3}
       propertyPath: m_Name
-      value: EnemySquareMachineGun
+      value: EnemySquareMachineGun Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1194674552453691503, guid: c09aeeb83df364342ba45a1ccfac24a9,
         type: 3}
@@ -86,6 +86,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fireDelay
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529309514527618733, guid: c09aeeb83df364342ba45a1ccfac24a9,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c09aeeb83df364342ba45a1ccfac24a9, type: 3}

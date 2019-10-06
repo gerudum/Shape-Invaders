@@ -15,9 +15,11 @@ MonoBehaviour:
   strength: 1
   effect: 1
   statusEffect: 0
+  stat: 0
   effectName: Burning Shot
   desc: Burn thy enemies!
-  icon: {fileID: 21300000, guid: 2b7f97ed2d4288143b5c9e18dfa1afc5, type: 3}
+  icon: {fileID: -4314967919995808015, guid: 1d006b1108fed2545b476f94c767c5c0, type: 3}
+  spawnOnce: 1
   visualEffect: {fileID: 6405600990030246035, guid: 1ee35c0dea4334344b2da90b202457cd,
     type: 3}
   newBullet: {fileID: 0}

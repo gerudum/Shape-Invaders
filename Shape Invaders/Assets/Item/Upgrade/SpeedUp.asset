@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: SpeedUp
   m_EditorClassIdentifier: 
   strength: 1
-  effect: 0
+  effect: 2
   statusEffect: 0
-  stat: 0
+  stat: 1
   effectName: Speed Up
   desc: Faster...
-  icon: {fileID: 0}
-  spawnOnce: 1
+  icon: {fileID: -1925817316698945789, guid: 1d006b1108fed2545b476f94c767c5c0, type: 3}
+  spawnOnce: 0
   visualEffect: {fileID: 0}
   newBullet: {fileID: 0}
   newChargedBullet: {fileID: 0}
