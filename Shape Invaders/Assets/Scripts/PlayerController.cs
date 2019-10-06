@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
 
-    public Follow cam;
+
 
     private Rigidbody2D rb;
     private Weapon weapon;
@@ -23,9 +23,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            weapon.Fire("Player",Camera.main.ScreenToWorldPoint(Input.mousePosition));
             anim.Play("Fire", -1, 0);
-         
+            weapon.Fire("Player",Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
     }
 

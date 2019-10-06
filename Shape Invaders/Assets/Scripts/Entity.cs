@@ -8,7 +8,6 @@ public class Entity : MonoBehaviour
     public float health;
     public float maxHealth;
 
-    public GameObject hitEffect;
     public GameObject deathEffect;
 
     private Animator anim;
@@ -25,8 +24,6 @@ public class Entity : MonoBehaviour
     {
         health -= damage;
         anim.SetFloat("health", health);
-
-        Instantiate(hitEffect, transform.position, transform.rotation);
     }
 
     public virtual void Death()

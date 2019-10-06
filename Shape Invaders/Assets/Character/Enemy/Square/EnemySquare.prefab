@@ -168,7 +168,7 @@ MonoBehaviour:
   maxHealth: 5
   hitEffect: {fileID: 7688676971181612802, guid: 090c057efc338b14bac1a871ded4afde,
     type: 3}
-  deathEffect: {fileID: 4253302938398420390, guid: d9407c39444754d4683658469ddef4c2,
+  deathEffect: {fileID: 7563742903510038417, guid: ecbcdf2002ede8d408e7c57a215369f4,
     type: 3}
 --- !u!114 &7529309514527618733
 MonoBehaviour:

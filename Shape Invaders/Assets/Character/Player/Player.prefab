@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 4789079300280188504}
   - component: {fileID: 4789079300280188508}
   - component: {fileID: 4789079300280188511}
-  - component: {fileID: 4789079300280188514}
+  - component: {fileID: 4766672538125482442}
   - component: {fileID: 4789079300280188509}
   m_Layer: 8
   m_Name: Player
@@ -202,7 +202,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f62e1d59d3f03d049bb35119cc5d4344, type: 3}
-  m_Color: {r: 1, g: 0.047002554, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.76249933, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -262,9 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  fireDelay: 0.3
-  cam: {fileID: 0}
---- !u!114 &4789079300280188514
+--- !u!114 &4766672538125482442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,15 +271,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4789079300280188507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36bb5354775296047ab03b4660ea6c2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 70a3c714c012e1148958bce0e6bc7769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 5
-  hitEffect: {fileID: 3544298996871299472, guid: ea4deb0a0f4f6f5479596df94ae2c019,
+  deathEffect: {fileID: 4253302938398420390, guid: d9407c39444754d4683658469ddef4c2,
     type: 3}
-  deathEffect: {fileID: 7319232913761741315, guid: 0deae27a3c359fc4c826db7eaa883d59,
-    type: 3}
+  cam: {fileID: 0}
 --- !u!95 &4789079300280188509
 Animator:
   serializedVersion: 3

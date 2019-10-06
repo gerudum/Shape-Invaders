@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6815608640083412901
+--- !u!1001 &965164049845542290
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7319232913761741315, guid: 0deae27a3c359fc4c826db7eaa883d59,
         type: 3}
       propertyPath: m_Name
-      value: PlayerExplode Variant
+      value: EnemyExplode Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6370649375095334703, guid: 0deae27a3c359fc4c826db7eaa883d59,
         type: 3}
@@ -69,17 +69,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 246840434315303885, guid: 0deae27a3c359fc4c826db7eaa883d59,
         type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 246840434315303885, guid: 0deae27a3c359fc4c826db7eaa883d59,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.7607844
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 246840434315303885, guid: 0deae27a3c359fc4c826db7eaa883d59,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 246840434315303885, guid: 0deae27a3c359fc4c826db7eaa883d59,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
