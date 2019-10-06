@@ -14,17 +14,17 @@ public class Weapon : MonoBehaviour
     //Special Upgrades
     public List<Effect> effects = new List<Effect>();
 
-    public void AddEffect(Effect effect, GameObject newBullet = null, GameObject newChargedBullet = null)
+    public void AddEffect(Effect effect)
     {
         effects.Add(effect);
 
-        if(newBullet != null)
+        if(effect.newBullet != null)
         {
-            bullet = newBullet;
+            bullet = effect.newBullet;
         }
-        if(newChargedBullet != null)
+        if(effect.newChargedBullet != null)
         {
-            specialBullet = newChargedBullet;
+            specialBullet = effect.newChargedBullet;
         }
     }
 
@@ -49,6 +49,24 @@ public class Weapon : MonoBehaviour
         {
             effect.DoEffect(this);
         }
+    }
+
+    public void MirrorFire(string parent, Vector3 target)
+    {
+        Vector3 offset = firePoint.position - new Vector3(0, -0.5f, 0);
+        GameObject newBullet = Instantiate(bullet, offset, bullet.transform.rotation);
+
+        //Aim towards mouse
+        Bullet bulletScript = newBullet.GetComponent<Bullet>();
+
+        bulletScript.Target(target);
+        bulletScript.parent = parent;
+        newBullet.tag = parent;
+
+        AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);
+
+  
+        Instantiate(bulletScript.projectile.fireEffect, offset, bullet.transform.rotation);
     }
 
     public void ChargedShot(string parent, Vector3 target)

@@ -1,25 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
+
+    public string effectName;
+    public string descName;
+    public Image icon;
+
     //The effect itself
     public Effect effect;
 
     //The weapon we're adding this effect too
     public Weapon weapon;
-
-    private Animator anim;
-
-    public void Start()
+    public void OnEnable()
     {
-        anim = GetComponent<Animator>();
+        effect = EffectManager.instance.GetRandomEffect();
+
+        effectName = effect.effectName;
+        descName = effect.desc;
+        icon.sprite = effect.icon;
     }
 
     public void Select()
-    {
-        weapon.effects.Add(effect);
-        anim.Play("Select");
+    {  
+        weapon.AddEffect(effect);
+
+        EffectManager.instance.RemoveEffect(effect);
     }
 }

@@ -24,6 +24,10 @@ public class Effect : ScriptableObject
     public float strength = 1f;
     public Effects effect;
 
+    public string effectName;
+    public string desc;
+    public Sprite icon;
+
     public GameObject newBullet;
     public GameObject newChargedBullet;
 
@@ -34,7 +38,7 @@ public class Effect : ScriptableObject
             case Effects.Multishot:
                 for(int i = 0; i < strength; i++)
                 {
-                    weapon.Fire("Player", Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                    weapon.MirrorFire("Player", Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 }
             break;
         }

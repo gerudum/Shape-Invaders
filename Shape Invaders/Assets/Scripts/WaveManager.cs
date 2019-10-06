@@ -20,10 +20,13 @@ public class WaveManager : MonoBehaviour
 
     public float spawnRadius = 20f;
 
+    public int wave = 0;
+    public int bonusThreshold = 2;
+
     public int totalEnemiesKilled;
+
     private int enemiesKilled = 0;
     private int enemyThreshold = 0;
-
     public void Awake()
     {
         instance = this;
@@ -50,6 +53,13 @@ public class WaveManager : MonoBehaviour
         current = GetWave();
         enemyThreshold = current.enemies;
         enemiesKilled = 0;
+
+        wave += 1;
+        if(wave > bonusThreshold)
+        {
+            EffectManager.instance.EnableCards();
+            bonusThreshold = (int)(wave * 1.5f);
+        }
 
         StartCoroutine("SpawnWave");
     }
@@ -118,8 +128,9 @@ public class WaveManager : MonoBehaviour
     public IEnumerator SpawnWave()
     {
         int totalSpawned = 0;
+ 
 
-        while(totalSpawned < enemyThreshold)
+        while (totalSpawned < enemyThreshold)
         {
             Wave.Spawn spawn = GetEnemy();
 
@@ -128,7 +139,7 @@ public class WaveManager : MonoBehaviour
 
             totalSpawned += 1;
             yield return new WaitForSeconds(current.delay);
-        }
+        }  
     }
 
     public Vector3 RandomPoint()
