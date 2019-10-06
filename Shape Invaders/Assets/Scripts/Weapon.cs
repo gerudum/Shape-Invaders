@@ -11,6 +11,23 @@ public class Weapon : MonoBehaviour
 
     public float chargeTime = 3f;
 
+    //Special Upgrades
+    public List<Effect> effects = new List<Effect>();
+
+    public void AddEffect(Effect effect, GameObject newBullet = null, GameObject newChargedBullet = null)
+    {
+        effects.Add(effect);
+
+        if(newBullet != null)
+        {
+            bullet = newBullet;
+        }
+        if(newChargedBullet != null)
+        {
+            specialBullet = newChargedBullet;
+        }
+    }
+
     //Fire Projectile
     public void Fire(string parent, Vector3 target)
     {
@@ -27,6 +44,11 @@ public class Weapon : MonoBehaviour
         AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);
 
         Instantiate(bulletScript.projectile.fireEffect, firePoint.position, bullet.transform.rotation);
+
+        foreach(Effect effect in effects)
+        {
+            effect.DoEffect(this);
+        }
     }
 
     public void ChargedShot(string parent, Vector3 target)

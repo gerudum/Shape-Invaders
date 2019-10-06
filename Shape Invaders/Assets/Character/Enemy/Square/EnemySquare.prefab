@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2b7f97ed2d4288143b5c9e18dfa1afc5, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -166,10 +166,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 5
-  hitEffect: {fileID: 7688676971181612802, guid: 090c057efc338b14bac1a871ded4afde,
-    type: 3}
   deathEffect: {fileID: 7563742903510038417, guid: ecbcdf2002ede8d408e7c57a215369f4,
     type: 3}
+  deathSound: Enemy-Explode
 --- !u!114 &7529309514527618733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 465380321599897547, guid: 2c15548693f1a4246a88db9031f4eda2, type: 3}
+  specialBullet: {fileID: 0}
   firePoint: {fileID: 2672627616535025336}
+  chargeTime: 3
 --- !u!1 &3989541557537403181
 GameObject:
   m_ObjectHideFlags: 0

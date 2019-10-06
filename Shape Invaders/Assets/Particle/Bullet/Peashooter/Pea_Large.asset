@@ -16,7 +16,7 @@ MonoBehaviour:
   speed: 15
   duration: 5
   piercing: 1
-  fireSound: Peashooter-Fire-Alt
+  fireSound: Peashooter-Fire-Charged
   impactSound: Peashooter-Impact
   fireEffect: {fileID: 204107537643511679, guid: 8b40c17cd07e96341a2564261350d044,
     type: 3}

@@ -43,9 +43,13 @@ public class PlayerController : MonoBehaviour
                     AudioManager.instance.PlaySound("Charging");
                     charging = true;
                 }
-               
+
+                if (!charged)
+                {
+                    player.cam.Shake(0.1f, 0.1f);
+                }
                 chargeup += Time.deltaTime;
-                player.cam.Shake(0.1f, 0.1f);
+            
             } else
             {
                 charging = false;

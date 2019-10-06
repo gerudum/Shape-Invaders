@@ -28,7 +28,7 @@ public class EnemyCharger : Enemy
 
     public IEnumerator ChargeAttack()
     {
-        Debug.Log("Charge!!!");
+     //   Debug.Log("Charge!!!");
         launched = true;
         Charge();
 
