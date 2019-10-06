@@ -41,10 +41,25 @@ public class WaveManager : MonoBehaviour
     {
         totalEnemiesKilled += 1;
         enemiesKilled += 1;
+
+        if(totalEnemiesKilled >= 30)
+        {
+            difficulty = Wave.Difficulty.Normal;
+        }
+        if(totalEnemiesKilled >= 100)
+        {
+            difficulty = Wave.Difficulty.Hard;
+        }
+        if(totalEnemiesKilled >= 175)
+        {
+            difficulty = Wave.Difficulty.Insane;
+        }
+
         if(enemiesKilled >= enemyThreshold)
         {
             NextWave();
         }
+        
     }
 
     public void NextWave()

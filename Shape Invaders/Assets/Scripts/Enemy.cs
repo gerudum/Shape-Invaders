@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public float fireCountdown;
 
+    [HideInInspector]
+    public bool ragdoll;
+
     public Weapon weapon;
 
     private Transform player;
@@ -52,6 +55,13 @@ public class Enemy : MonoBehaviour
         moveSpeed -= strength;
     }
 
+    public virtual IEnumerator Ragdoll(float duration)
+    {
+        ragdoll = true;
+        yield return new WaitForSeconds(duration);
+        ragdoll = false;
+    }
+
     public void FindPlayer()
     {
         dir = player.position - transform.position;
@@ -78,6 +88,8 @@ public class Enemy : MonoBehaviour
 
     public void Move()
     {
+        if (ragdoll) return;
+
         FindPlayer();
 
         if (!InRange())

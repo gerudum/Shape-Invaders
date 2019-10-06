@@ -11,6 +11,9 @@ public class Entity : MonoBehaviour
     public GameObject deathEffect;
     public string deathSound = "Enemy-Explode";
 
+
+
+
     private Animator anim;
 
     //Animator
@@ -26,6 +29,8 @@ public class Entity : MonoBehaviour
         health -= damage;
         anim.SetFloat("health", health);
     }
+
+  
 
     public virtual void Death()
     {

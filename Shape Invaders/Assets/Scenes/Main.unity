@@ -198,7 +198,64 @@ MonoBehaviour:
     enemies: 15
     delay: 1
     weight: 5
-  difficulty: 1
+  - name: Triangle Barrage
+    difficulty: 1
+    spawns:
+    - enemy: {fileID: 225282886806189473, guid: 5a77026465e265a4d960a00c5f01d497,
+        type: 3}
+      weight: 5
+    enemies: 15
+    delay: 1
+    weight: 5
+  - name: Tanky Squares
+    difficulty: 1
+    spawns:
+    - enemy: {fileID: 7229222631065661668, guid: 9672b09694b4634488e4d091e4126b08,
+        type: 3}
+      weight: 5
+    - enemy: {fileID: 225282886806189473, guid: 5a77026465e265a4d960a00c5f01d497,
+        type: 3}
+      weight: 5
+    enemies: 10
+    delay: 1
+    weight: 5
+  - name: Machine Gunners
+    difficulty: 1
+    spawns:
+    - enemy: {fileID: 7229222631065661668, guid: 9672b09694b4634488e4d091e4126b08,
+        type: 3}
+      weight: 5
+    - enemy: {fileID: 7294376069766751020, guid: 9e92c912459df8a46a76bd9fc810d34b,
+        type: 3}
+      weight: 5
+    enemies: 10
+    delay: 1
+    weight: 5
+  - name: Snipers and Gunners
+    difficulty: 2
+    spawns:
+    - enemy: {fileID: 8997196140488638116, guid: 7fcff61fec9d4c040a3d6a89bdb8a256,
+        type: 3}
+      weight: 5
+    - enemy: {fileID: 7294376069766751020, guid: 9e92c912459df8a46a76bd9fc810d34b,
+        type: 3}
+      weight: 5
+    enemies: 15
+    delay: 1
+    weight: 5
+  - name: Tanks and Gunners
+    difficulty: 2
+    spawns:
+    - enemy: {fileID: 7229222631065661668, guid: 9672b09694b4634488e4d091e4126b08,
+        type: 3}
+      weight: 5
+    - enemy: {fileID: 7294376069766751020, guid: 9e92c912459df8a46a76bd9fc810d34b,
+        type: 3}
+      weight: 5
+    enemies: 15
+    delay: 1
+    weight: 5
+  difficulty: 0
   spawnRadius: 20
   wave: 0
   bonusThreshold: 2
