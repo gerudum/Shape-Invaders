@@ -291,7 +291,7 @@ MonoBehaviour:
   bonusThreshold: 3
   totalEnemiesKilled: 0
   gameOver: {fileID: 405454671}
-  score: {fileID: 1599945532}
+  score: {fileID: 1734360304}
 --- !u!4 &9430624
 Transform:
   m_ObjectHideFlags: 0
