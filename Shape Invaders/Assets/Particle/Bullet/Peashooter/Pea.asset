@@ -14,3 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 15
+  duration: 5
+  fireSound: Peashooter-Fire-Alt
+  impactSound: Peashooter-Impact
+  fireEffect: {fileID: 204107537643511679, guid: 8b40c17cd07e96341a2564261350d044,
+    type: 3}
+  impactEffect: {fileID: 1359689029367346844, guid: 711f6855462c358498bbed4515d6644e,
+    type: 3}

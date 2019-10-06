@@ -168,6 +168,27 @@ MonoBehaviour:
     enemies: 5
     delay: 1
     weight: 5
+  - name: Triangle Basic
+    difficulty: 0
+    spawns:
+    - enemy: {fileID: 225282886806189473, guid: 5a77026465e265a4d960a00c5f01d497,
+        type: 3}
+      weight: 5
+    enemies: 5
+    delay: 1
+    weight: 5
+  - name: Square and Triangle
+    difficulty: 0
+    spawns:
+    - enemy: {fileID: 225282886806189473, guid: 5a77026465e265a4d960a00c5f01d497,
+        type: 3}
+      weight: 5
+    - enemy: {fileID: 1194674552453691501, guid: c09aeeb83df364342ba45a1ccfac24a9,
+        type: 3}
+      weight: 5
+    enemies: 8
+    delay: 1
+    weight: 2
   difficulty: 0
   spawnRadius: 20
   totalEnemiesKilled: 0
@@ -288,6 +309,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &964884416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964884418}
+  - component: {fileID: 964884417}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &964884417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964884416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161649d3ca9c1814594434b255b261d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Peashooter-Fire
+    clip: {fileID: 8300000, guid: cc63c2940e36f954fae940fe869b3acb, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+  - name: Peashooter-Fire-Alt
+    clip: {fileID: 8300000, guid: b6969f8d9e9aea543aa2fb0ec3482dd8, type: 3}
+    source: {fileID: 0}
+    volume: 0.2
+    pitch: 1
+  - name: Peashooter-Impact
+    clip: {fileID: 8300000, guid: b527380f1341ccb42944b161e0cc608b, type: 3}
+    source: {fileID: 0}
+    volume: 0.6
+    pitch: 0.9
+--- !u!4 &964884418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964884416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1836549532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4789079300280188510, guid: dd6e6981a3e0a9c4c96898b583497b23,
@@ -344,7 +424,7 @@ PrefabInstance:
     - target: {fileID: 4789079300280188510, guid: dd6e6981a3e0a9c4c96898b583497b23,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4789079300280188510, guid: dd6e6981a3e0a9c4c96898b583497b23,
         type: 3}

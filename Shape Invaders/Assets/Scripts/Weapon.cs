@@ -20,5 +20,9 @@ public class Weapon : MonoBehaviour
         bulletScript.Target(target);
         bulletScript.parent = parent;
         newBullet.tag = parent;
+
+        AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);
+
+        Instantiate(bulletScript.projectile.fireEffect, firePoint.position, bullet.transform.rotation);
     }
 }

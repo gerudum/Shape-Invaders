@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
         {
             weapon.Fire("Player",Camera.main.ScreenToWorldPoint(Input.mousePosition));
             anim.Play("Fire", -1, 0);
+         
         }
     }
 

@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 3
+  maxHealth: 5
   hitEffect: {fileID: 7688676971181612802, guid: 090c057efc338b14bac1a871ded4afde,
     type: 3}
   deathEffect: {fileID: 4253302938398420390, guid: d9407c39444754d4683658469ddef4c2,
@@ -185,6 +185,8 @@ MonoBehaviour:
   moveSpeed: 3
   fireDelay: 3
   shootRange: 6
+  fireCountdown: 0
+  weapon: {fileID: 3803952628825261817}
 --- !u!1 &1194674553513452890
 GameObject:
   m_ObjectHideFlags: 0

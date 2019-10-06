@@ -79,12 +79,12 @@ public class WaveManager : MonoBehaviour
         float rand = Random.Range(0, total);
         for(int i = 0; i < currentPool.Count; i++)
         {
-            if (rand >= top)
+            top += currentPool[i].weight;
+
+            if (rand <= top)
             {
                 return currentPool[i];
             }
-
-            top += currentPool[i].weight;        
         }
 
         Debug.LogError("Return a null wave, something went wrong");
@@ -103,12 +103,12 @@ public class WaveManager : MonoBehaviour
         float rand = Random.Range(0, total);
         for (int i = 0; i < current.spawns.Length; i++)
         {
-            if (rand >= top)
+            top += current.spawns[i].weight;
+
+            if (rand <= top)
             {
                 return current.spawns[i];
             }
-
-            top += current.spawns[i].weight;
         }
 
         Debug.LogError("Return a null Spawn, something went wrong");

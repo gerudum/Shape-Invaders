@@ -49,17 +49,21 @@ public class Bullet : MonoBehaviour
             return;
         }
 
+        AudioManager.instance.PlaySound(projectile.impactSound);
+        Instantiate(projectile.impactEffect, transform.position, transform.rotation);
         collision.SendMessage("TakeDamage", projectile.damage,SendMessageOptions.DontRequireReceiver);
         Death();
     }
 
     public void Death()
     {
+      
         Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+   
         Damage(collision);
     }
 }

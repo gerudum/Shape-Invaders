@@ -4,32 +4,31 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-   
     public float moveSpeed;
     public float fireDelay;
     public float shootRange = 10f;
 
-    private float fireCountdown;
+    [HideInInspector]
+    public float fireCountdown;
+
+    public Weapon weapon;
+
     private Transform player;
-    private Rigidbody2D rb;
-
     private Vector3 dir;
-    private Weapon weapon;
 
+    private Rigidbody2D rb;
     private Animator anim;
 
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        weapon = GetComponentInChildren<Weapon>();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         fireCountdown = fireDelay;
     }
 
-    public void Update()
+    public virtual void Update()
     {
         if (InRange())
         {
@@ -43,7 +42,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         Move();    
     }
@@ -87,8 +86,12 @@ public class Enemy : MonoBehaviour
         Aim();
     }
 
-   
-    private bool InRange()
+    public void Charge()
+    {
+        rb.AddForce(dir * moveSpeed * 2,ForceMode2D.Impulse);
+    }
+
+    public  bool InRange()
     {
         return Physics2D.OverlapCircle(transform.position, shootRange, LayerMask.GetMask("Player"));
     }
