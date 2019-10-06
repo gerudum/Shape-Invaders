@@ -52,6 +52,8 @@ public class Bullet : MonoBehaviour
         AudioManager.instance.PlaySound(projectile.impactSound);
         Instantiate(projectile.impactEffect, transform.position, transform.rotation);
         collision.SendMessage("TakeDamage", projectile.damage,SendMessageOptions.DontRequireReceiver);
+
+        if(!projectile.piercing)
         Death();
     }
 

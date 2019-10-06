@@ -343,8 +343,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 251.8, y: 51}
-  m_SizeDelta: {x: 460, y: 55}
+  m_AnchoredPosition: {x: 241.2, y: 27}
+  m_SizeDelta: {x: 455, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529802209
 MonoBehaviour:
@@ -495,6 +495,21 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 0.6
     pitch: 0.9
+  - name: Enemy-Explode
+    clip: {fileID: 8300000, guid: d8945e41d13924d49b8028cfcf99a2ab, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+  - name: Charging
+    clip: {fileID: 8300000, guid: b5a5aee54d978e54394fd656b6d250e3, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+  - name: Charged
+    clip: {fileID: 8300000, guid: 9db3fdc2373232f40b467b6e9e61f80a, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
 --- !u!4 &964884418
 Transform:
   m_ObjectHideFlags: 0
@@ -544,8 +559,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 27, y: 51}
-  m_SizeDelta: {x: 450, y: 50}
+  m_AnchoredPosition: {x: 16.399994, y: 27}
+  m_SizeDelta: {x: 450, y: 25}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1140344106
 MonoBehaviour:
@@ -598,6 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rect: {fileID: 1140344105}
+  smoothSpeed: 0.125
 --- !u!1 &1545613392
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,11 +787,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4789079300280188511, guid: dd6e6981a3e0a9c4c96898b583497b23,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420030}
     - target: {fileID: 4766672538125482442, guid: dd6e6981a3e0a9c4c96898b583497b23,
         type: 3}
       propertyPath: cam

@@ -9,6 +9,7 @@ public class Entity : MonoBehaviour
     public float maxHealth;
 
     public GameObject deathEffect;
+    public string deathSound = "Enemy-Explode";
 
     private Animator anim;
 
@@ -29,6 +30,7 @@ public class Entity : MonoBehaviour
     public virtual void Death()
     {
         Instantiate(deathEffect, transform.position, transform.rotation);
+        AudioManager.instance.PlaySound(deathSound);
         Destroy(this.gameObject);
     }
 }

@@ -22,7 +22,7 @@ public class Follow : MonoBehaviour
 
     public void Shake(float duration, float strength)
     {
-        originalPos = camTransform.localPosition;
+        
 
         shakeDuration = duration;
         shakeAmount = strength;
@@ -31,6 +31,8 @@ public class Follow : MonoBehaviour
     public void FixedUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, target.position + offset, smoothSpeed);
+
+        originalPos = camTransform.localPosition;
 
         if (shakeDuration > 0)
         {

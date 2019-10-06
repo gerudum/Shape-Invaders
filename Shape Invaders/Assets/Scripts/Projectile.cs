@@ -8,6 +8,9 @@ public class Projectile : ScriptableObject
     public float damage = 1f;
     public float speed = 15f;
     public float duration = 5f;
+
+    public bool piercing = false;
+
     public string fireSound;
     public string impactSound;
 
