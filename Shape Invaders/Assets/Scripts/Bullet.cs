@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
 {
     public Vector3 target;
     public Projectile projectile;
+    public float damageModifier;
 
     [HideInInspector]
     public string parent;
@@ -51,7 +52,7 @@ public class Bullet : MonoBehaviour
 
         AudioManager.instance.PlaySound(projectile.impactSound);
         Instantiate(projectile.impactEffect, transform.position, transform.rotation);
-        collision.SendMessage("TakeDamage", projectile.damage,SendMessageOptions.DontRequireReceiver);
+        collision.SendMessage("TakeDamage", projectile.damage * damageModifier,SendMessageOptions.DontRequireReceiver);
 
         if(!projectile.piercing)
         Death();

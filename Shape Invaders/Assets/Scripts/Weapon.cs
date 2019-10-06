@@ -30,6 +30,27 @@ public class Weapon : MonoBehaviour
         {
             specialBullet = effect.newChargedBullet;
         }
+
+        if(effect.effect == Effect.Effects.Statup)
+        {
+            switch (effect.stat)
+            {
+                case Effect.Stats.Health:
+                    Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+                    player.TakeDamage(-effect.strength);
+                break;
+                case Effect.Stats.Speed:
+                    PlayerController playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+                    playerController.moveSpeed += effect.strength;
+                break;
+                case Effect.Stats.Damage:
+                    PlayerController playerCon = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+                    playerCon.damageModifier += effect.strength;
+                break;
+            }
+
+            effects.Remove(effect);
+        }
     }
 
     //Fire Projectile
@@ -43,6 +64,7 @@ public class Weapon : MonoBehaviour
 
         bulletScript.Target(target);
         bulletScript.parent = parent;
+        bulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
         newBullet.tag = parent;
 
         AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);

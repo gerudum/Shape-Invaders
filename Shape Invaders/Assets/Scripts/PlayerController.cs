@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public float chargeDelay = 0.3f;
+    public float damageModifier = 1f;
     private float chargeup;
 
 

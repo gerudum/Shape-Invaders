@@ -10,13 +10,8 @@ public class Effect : ScriptableObject
     {
         Multishot,
         Status,
-        SpeedUp,
-        DamageUp,
-        Vortex,
-        Pulse,
-        Explosive,
-        Repulsive,
-        Laser
+        Statup,
+        Bullet
     }
 
     public enum StatusEffect
@@ -26,11 +21,19 @@ public class Effect : ScriptableObject
         Poison,
         Shock
     }
+
+    public enum Stats
+    {
+        Health,
+        Speed,
+        Damage
+    }
     
     public float strength = 1f;
 
     public Effects effect = Effects.Multishot;
     public StatusEffect statusEffect = StatusEffect.Fire;
+    public Stats stat = Stats.Health;
 
     public string effectName;
     public string desc;
@@ -54,9 +57,7 @@ public class Effect : ScriptableObject
             case Effects.Status:
                 weapon.lastBullet.AddComponent<Status>().effect = this;
             break;
-            case Effects.Vortex:
-                //This just changes your charged bullet.
-            break;
+
         }
     }
 }
@@ -71,11 +72,15 @@ public class EffectInspector : Editor
         effect.effect = (Effect.Effects)EditorGUILayout.EnumFlagsField("Effect", effect.effect);
 
         bool isEffect = effect.effect == Effect.Effects.Status;
+        bool isStat = effect.effect == Effect.Effects.Statup;
 
         if (isEffect)
         {
             effect.statusEffect = (Effect.StatusEffect)EditorGUILayout.EnumFlagsField("Status Effect", effect.statusEffect);
            
+        } else if (isStat)
+        {
+            effect.stat = (Effect.Stats)EditorGUILayout.EnumFlagsField("Stat", effect.stat);
         }
 
         effect.visualEffect = (GameObject)EditorGUILayout.ObjectField("Status Visual Effect", effect.visualEffect, typeof(GameObject), false);

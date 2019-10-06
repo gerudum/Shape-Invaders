@@ -15,7 +15,6 @@ public class EffectManager : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log("For Debugging");
         if (Input.GetKeyDown(KeyCode.Q))
         {
             EnableCards();
