@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4ba3ea2666001e4da3cebd844b855d8, type: 3}
-  m_Name: Multishot
+  m_Name: CryoShot
   m_EditorClassIdentifier: 
   strength: 1
-  effect: 0
-  effectName: Multishot
-  desc: Increase your bullets!
+  effect: 1
+  statusEffect: 1
+  effectName: Cryo Shot
+  desc: Freeze your foes!
   icon: {fileID: 21300000, guid: f62e1d59d3f03d049bb35119cc5d4344, type: 3}
+  visualEffect: {fileID: 0}
   newBullet: {fileID: 0}
   newChargedBullet: {fileID: 0}

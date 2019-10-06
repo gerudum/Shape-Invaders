@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Card : MonoBehaviour
 {
 
-    public string effectName;
-    public string descName;
+    public Text effectName;
+    public Text desc;
     public Image icon;
 
     //The effect itself
@@ -19,8 +19,8 @@ public class Card : MonoBehaviour
     {
         effect = EffectManager.instance.GetRandomEffect();
 
-        effectName = effect.effectName;
-        descName = effect.desc;
+        effectName.text = effect.effectName;
+        desc.text = effect.desc;
         icon.sprite = effect.icon;
     }
 

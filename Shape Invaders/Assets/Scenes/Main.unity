@@ -191,6 +191,8 @@ MonoBehaviour:
     weight: 2
   difficulty: 0
   spawnRadius: 20
+  wave: 0
+  bonusThreshold: 2
   totalEnemiesKilled: 0
 --- !u!4 &9430624
 Transform:
@@ -1036,6 +1038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectPool:
   - {fileID: 11400000, guid: 315a38a23014c0e40a9e829bb5a40e11, type: 2}
+  - {fileID: 11400000, guid: 5959e5bdccd76ee49abbe79041489a5f, type: 2}
+  - {fileID: 11400000, guid: 6a35db0dabbd71e41845004352179ead, type: 2}
   cardHolder: {fileID: 1566539064}
 --- !u!4 &1701987700
 Transform:
@@ -1270,17 +1274,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1140344108}
-    - target: {fileID: 4591016215798633951, guid: dd6e6981a3e0a9c4c96898b583497b23,
-        type: 3}
-      propertyPath: effects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591016215798633951, guid: dd6e6981a3e0a9c4c96898b583497b23,
-        type: 3}
-      propertyPath: effects.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 315a38a23014c0e40a9e829bb5a40e11,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd6e6981a3e0a9c4c96898b583497b23, type: 3}
 --- !u!1001 &8134422382196781115

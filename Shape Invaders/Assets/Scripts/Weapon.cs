@@ -7,6 +7,10 @@ public class Weapon : MonoBehaviour
     //Bullet and Firepoint
     public GameObject bullet;
     public GameObject specialBullet;
+
+    [HideInInspector]
+    public GameObject lastBullet;
+
     public Transform firePoint;
 
     public float chargeTime = 3f;
@@ -45,6 +49,8 @@ public class Weapon : MonoBehaviour
 
         Instantiate(bulletScript.projectile.fireEffect, firePoint.position, bullet.transform.rotation);
 
+        lastBullet = newBullet;
+
         foreach(Effect effect in effects)
         {
             effect.DoEffect(this);
@@ -67,6 +73,8 @@ public class Weapon : MonoBehaviour
 
   
         Instantiate(bulletScript.projectile.fireEffect, offset, bullet.transform.rotation);
+
+        lastBullet = newBullet;
     }
 
     public void ChargedShot(string parent, Vector3 target)

@@ -224,6 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b894d8af27e8de4a9c4eca2ae410bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectName: {fileID: 8134422380162456325}
+  desc: {fileID: 8134422381436663022}
+  icon: {fileID: 229469791781483787}
   effect: {fileID: 0}
   weapon: {fileID: 0}
 --- !u!1 &8134422380162456327

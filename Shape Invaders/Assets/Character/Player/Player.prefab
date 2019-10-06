@@ -129,6 +129,7 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 4051579070663012807}
   chargeTime: 3
+  effects: []
 --- !u!1 &4789079300280188507
 GameObject:
   m_ObjectHideFlags: 0

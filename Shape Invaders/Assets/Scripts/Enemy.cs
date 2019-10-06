@@ -47,6 +47,11 @@ public class Enemy : MonoBehaviour
         Move();    
     }
 
+    public virtual void LoseSpeed(float strength)
+    {
+        moveSpeed -= strength;
+    }
+
     public void FindPlayer()
     {
         dir = player.position - transform.position;

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 225282886806189479}
   m_Layer: 0
   m_Name: EnemyTriangle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,6 +150,7 @@ MonoBehaviour:
   maxHealth: 3
   deathEffect: {fileID: 7563742903510038417, guid: ecbcdf2002ede8d408e7c57a215369f4,
     type: 3}
+  deathSound: Enemy-Explode
 --- !u!114 &225282886806189472
 MonoBehaviour:
   m_ObjectHideFlags: 0
