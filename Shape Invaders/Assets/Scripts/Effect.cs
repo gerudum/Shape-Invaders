@@ -31,15 +31,15 @@ public class Effect : ScriptableObject
     
     public float strength = 1f;
 
-    public Effects effect = Effects.Multishot;
-    public StatusEffect statusEffect = StatusEffect.Fire;
-    public Stats stat = Stats.Health;
+    public Effects effect;
+    public StatusEffect statusEffect;
+    public Stats stat;
 
     public string effectName;
     public string desc;
     public Sprite icon;
 
-    public bool spawnOnce = true;
+    public bool spawnOnce;
 
     public GameObject visualEffect;
 

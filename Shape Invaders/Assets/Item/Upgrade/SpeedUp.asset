@@ -16,9 +16,10 @@ MonoBehaviour:
   effect: 0
   statusEffect: 0
   stat: 0
-  effectName: 
-  desc: 
+  effectName: Speed Up
+  desc: Faster...
   icon: {fileID: 0}
+  spawnOnce: 1
   visualEffect: {fileID: 0}
   newBullet: {fileID: 0}
   newChargedBullet: {fileID: 0}
