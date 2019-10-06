@@ -189,7 +189,16 @@ MonoBehaviour:
     enemies: 8
     delay: 1
     weight: 2
-  difficulty: 0
+  - name: Square Barrage
+    difficulty: 1
+    spawns:
+    - enemy: {fileID: 1194674552453691501, guid: c09aeeb83df364342ba45a1ccfac24a9,
+        type: 3}
+      weight: 5
+    enemies: 15
+    delay: 1
+    weight: 5
+  difficulty: 1
   spawnRadius: 20
   wave: 0
   bonusThreshold: 2
@@ -1040,6 +1049,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 315a38a23014c0e40a9e829bb5a40e11, type: 2}
   - {fileID: 11400000, guid: 5959e5bdccd76ee49abbe79041489a5f, type: 2}
   - {fileID: 11400000, guid: 6a35db0dabbd71e41845004352179ead, type: 2}
+  - {fileID: 11400000, guid: 1678e9a51f69ef94faaf031586718480, type: 2}
+  - {fileID: 11400000, guid: 18acf61d351473f4baab04824e059f18, type: 2}
   cardHolder: {fileID: 1566539064}
 --- !u!4 &1701987700
 Transform:

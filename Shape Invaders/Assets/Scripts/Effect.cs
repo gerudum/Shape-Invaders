@@ -54,6 +54,9 @@ public class Effect : ScriptableObject
             case Effects.Status:
                 weapon.lastBullet.AddComponent<Status>().effect = this;
             break;
+            case Effects.Vortex:
+                //This just changes your charged bullet.
+            break;
         }
     }
 }
@@ -72,8 +75,10 @@ public class EffectInspector : Editor
         if (isEffect)
         {
             effect.statusEffect = (Effect.StatusEffect)EditorGUILayout.EnumFlagsField("Status Effect", effect.statusEffect);
-            effect.visualEffect = (GameObject)EditorGUILayout.ObjectField("Status Visual Effect", effect.visualEffect, typeof(GameObject), false);
+           
         }
+
+        effect.visualEffect = (GameObject)EditorGUILayout.ObjectField("Status Visual Effect", effect.visualEffect, typeof(GameObject), false);
 
         effect.effectName = EditorGUILayout.TextField("Card Name", effect.effectName);
         effect.desc = EditorGUILayout.TextField("Card Description", effect.desc);

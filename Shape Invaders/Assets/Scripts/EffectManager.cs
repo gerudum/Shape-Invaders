@@ -13,9 +13,26 @@ public class EffectManager : MonoBehaviour
     public List<Effect> effectPool = new List<Effect>();
     public GameObject cardHolder;
 
+    public void Update()
+    {
+        Debug.Log("For Debugging");
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            EnableCards();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            HideCards();
+        }
+    }
     public void EnableCards()
     {
         cardHolder.SetActive(true);
+    }
+
+    public void HideCards()
+    {
+        cardHolder.SetActive(false);
     }
 
     public void RemoveEffect(Effect effect)

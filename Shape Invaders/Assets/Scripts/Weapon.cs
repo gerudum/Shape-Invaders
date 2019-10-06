@@ -36,7 +36,7 @@ public class Weapon : MonoBehaviour
     public void Fire(string parent, Vector3 target)
     {
        
-        GameObject newBullet = Instantiate(bullet, firePoint.position, bullet.transform.rotation);
+        GameObject newBullet = Instantiate(bullet, firePoint.position, firePoint.transform.rotation);
 
         //Aim towards mouse
         Bullet bulletScript = newBullet.GetComponent<Bullet>();
@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour
 
         AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);
 
-        Instantiate(bulletScript.projectile.fireEffect, firePoint.position, bullet.transform.rotation);
+        Instantiate(bulletScript.projectile.fireEffect, firePoint.position, firePoint.transform.rotation);
 
         lastBullet = newBullet;
 
@@ -60,7 +60,8 @@ public class Weapon : MonoBehaviour
     public void MirrorFire(string parent, Vector3 target)
     {
         Vector3 offset = firePoint.position - new Vector3(0, -0.5f, 0);
-        GameObject newBullet = Instantiate(bullet, offset, bullet.transform.rotation);
+        GameObject newBullet = Instantiate(bullet, offset, firePoint.transform.rotation);
+        
 
         //Aim towards mouse
         Bullet bulletScript = newBullet.GetComponent<Bullet>();
@@ -72,7 +73,7 @@ public class Weapon : MonoBehaviour
         AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);
 
   
-        Instantiate(bulletScript.projectile.fireEffect, offset, bullet.transform.rotation);
+        Instantiate(bulletScript.projectile.fireEffect, offset, firePoint.transform.rotation);
 
         lastBullet = newBullet;
     }
