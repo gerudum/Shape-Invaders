@@ -41,6 +41,8 @@ public class Follow : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (target == null) return;
+
         transform.position = Vector3.Lerp(transform.position, target.position + offset, smoothSpeed);
 
         originalPos = camTransform.localPosition;

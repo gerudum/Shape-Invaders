@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1111,6 +1111,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a5984c25813f0e84dba495ffdd8dd6ba, type: 2}
   - {fileID: 11400000, guid: 38c843d7dc7e85246a6d20aad81215bf, type: 2}
   - {fileID: 11400000, guid: c602e8008b049e7429d00295c5c30537, type: 2}
+  - {fileID: 11400000, guid: 17d16a8a08666414e8d28c326abaadb2, type: 2}
   cardHolder: {fileID: 1566539064}
 --- !u!4 &1701987700
 Transform:

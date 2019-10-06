@@ -90,6 +90,8 @@ public class Enemy : MonoBehaviour
     {
         if (ragdoll) return;
 
+        if (player == null) return;
+
         FindPlayer();
 
         if (!InRange())

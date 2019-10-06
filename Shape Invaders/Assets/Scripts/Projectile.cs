@@ -11,8 +11,8 @@ public class Projectile : ScriptableObject
 
     public bool piercing = false;
 
-    public string fireSound;
-    public string impactSound;
+    public string fireSound = "Peashooter-Fire-Alt";
+    public string impactSound = "Peashooter-Impact";
 
     public GameObject fireEffect;
     public GameObject impactEffect;

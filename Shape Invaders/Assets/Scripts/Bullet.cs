@@ -11,7 +11,6 @@ public class Bullet : MonoBehaviour
     public Projectile projectile;
     public float damageModifier = 1f;
 
-    [HideInInspector]
     public string parent;
 
     private Rigidbody2D rb;

@@ -11,16 +11,18 @@ public class HealthBar : MonoBehaviour
     private float maxValue;
     private float value;
     private float stretch;
+    private float originalX;
     public void Start()
     {
         stretch = rect.localScale.x;
+        originalX = rect.localScale.x; 
     }
 
     public void UpdateHealth(float max, float val)
     {
         maxValue = max;
         value = val;
-        stretch = (value / maxValue) * rect.localScale.x;
+        stretch = (value / maxValue) * originalX;
     }
 
     public void Update()

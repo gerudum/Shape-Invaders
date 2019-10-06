@@ -12,6 +12,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: VortexMiniShot Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6991286995744900203, guid: 08da04922a0604249b319f1281e36ee5,
+        type: 3}
+      propertyPath: strength
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991286995744900203, guid: 08da04922a0604249b319f1281e36ee5,
+        type: 3}
+      propertyPath: radius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991286995744900203, guid: 08da04922a0604249b319f1281e36ee5,
+        type: 3}
+      propertyPath: pulseRate
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991286995744900203, guid: 08da04922a0604249b319f1281e36ee5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7143983313950096863, guid: 08da04922a0604249b319f1281e36ee5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -83,21 +103,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e8341af3e141aaa4589501925c411cda,
         type: 2}
-    - target: {fileID: 6991286995744900203, guid: 08da04922a0604249b319f1281e36ee5,
-        type: 3}
-      propertyPath: strength
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6991286995744900203, guid: 08da04922a0604249b319f1281e36ee5,
-        type: 3}
-      propertyPath: radius
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6991286995744900203, guid: 08da04922a0604249b319f1281e36ee5,
-        type: 3}
-      propertyPath: pulseRate
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3291839369575617232, guid: 08da04922a0604249b319f1281e36ee5,
         type: 3}
       propertyPath: m_IsActive

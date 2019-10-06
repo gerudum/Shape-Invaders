@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a1fd1fd8449ba14485ed9894dea5a2c, type: 3}
-  m_Name: Pea
+  m_Name: ExplosiveShot
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   speed: 15
   duration: 2
   piercing: 0
@@ -20,5 +20,5 @@ MonoBehaviour:
   impactSound: Peashooter-Impact
   fireEffect: {fileID: 204107537643511679, guid: 8b40c17cd07e96341a2564261350d044,
     type: 3}
-  impactEffect: {fileID: 1359689029367346844, guid: 711f6855462c358498bbed4515d6644e,
+  impactEffect: {fileID: 7866128115443079152, guid: 854b02a3cb2c2f747855fec703d82e16,
     type: 3}

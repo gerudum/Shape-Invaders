@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6405600990030246035, guid: 1ee35c0dea4334344b2da90b202457cd,
         type: 3}
       propertyPath: m_Name
-      value: Freezing
+      value: Freezing Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6405600990030246046, guid: 1ee35c0dea4334344b2da90b202457cd,
         type: 3}
@@ -126,6 +126,21 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405600990030246045, guid: 1ee35c0dea4334344b2da90b202457cd,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405600990030246045, guid: 1ee35c0dea4334344b2da90b202457cd,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405600990030246044, guid: 1ee35c0dea4334344b2da90b202457cd,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee35c0dea4334344b2da90b202457cd, type: 3}

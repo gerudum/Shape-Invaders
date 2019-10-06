@@ -159,7 +159,13 @@ public class WaveManager : MonoBehaviour
 
     public Vector3 RandomPoint()
     {
+
+        
+
         Vector2 point = Random.insideUnitCircle * spawnRadius;
+
+        if (player == null) return point;
+        
         Vector3 newPoint = new Vector3(player.position.x + point.x, player.position.y + point.y, 0);
         return newPoint;
     }
