@@ -39,6 +39,8 @@ public class Effect : ScriptableObject
     public string desc;
     public Sprite icon;
 
+    public bool spawnOnce = true;
+
     public GameObject visualEffect;
 
     public GameObject newBullet;
@@ -69,28 +71,31 @@ public class EffectInspector : Editor
     {
         var effect = target as Effect;
         effect.strength = EditorGUILayout.FloatField("Strength", effect.strength);
-        effect.effect = (Effect.Effects)EditorGUILayout.EnumFlagsField("Effect", effect.effect);
+        effect.effect = (Effect.Effects)EditorGUILayout.EnumPopup("Effect", effect.effect);
+        effect.spawnOnce = EditorGUILayout.Toggle("Spawn Once?", effect.spawnOnce);
 
         bool isEffect = effect.effect == Effect.Effects.Status;
         bool isStat = effect.effect == Effect.Effects.Statup;
+        bool isBullet = effect.effect == Effect.Effects.Bullet;
 
         if (isEffect)
         {
-            effect.statusEffect = (Effect.StatusEffect)EditorGUILayout.EnumFlagsField("Status Effect", effect.statusEffect);
-           
-        } else if (isStat)
+            effect.statusEffect = (Effect.StatusEffect)EditorGUILayout.EnumPopup("Status Effect", effect.statusEffect);
+            effect.visualEffect = (GameObject)EditorGUILayout.ObjectField("Status Visual Effect", effect.visualEffect, typeof(GameObject), false);
+        }
+        else if (isStat)
         {
-            effect.stat = (Effect.Stats)EditorGUILayout.EnumFlagsField("Stat", effect.stat);
+            effect.stat = (Effect.Stats)EditorGUILayout.EnumPopup("Stat", effect.stat);
         }
 
-        effect.visualEffect = (GameObject)EditorGUILayout.ObjectField("Status Visual Effect", effect.visualEffect, typeof(GameObject), false);
+
 
         effect.effectName = EditorGUILayout.TextField("Card Name", effect.effectName);
         effect.desc = EditorGUILayout.TextField("Card Description", effect.desc);
 
         effect.icon = (Sprite)EditorGUILayout.ObjectField("Card Icon", effect.icon, typeof(Sprite), false);
 
-        if (!isEffect)
+        if (isBullet)
         {
             effect.newBullet = (GameObject)EditorGUILayout.ObjectField("New Bullet", effect.newBullet, typeof(GameObject), false);
             effect.newChargedBullet = (GameObject)EditorGUILayout.ObjectField("New Charged Bullet", effect.newChargedBullet, typeof(GameObject), false);

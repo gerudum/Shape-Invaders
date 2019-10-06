@@ -90,6 +90,7 @@ public class Weapon : MonoBehaviour
 
         bulletScript.Target(target);
         bulletScript.parent = parent;
+        bulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
         newBullet.tag = parent;
 
         AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);
@@ -110,6 +111,7 @@ public class Weapon : MonoBehaviour
 
         bulletScript.Target(target);
         bulletScript.parent = parent;
+        bulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
         newBullet.tag = parent;
 
         AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);

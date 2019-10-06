@@ -1108,6 +1108,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a35db0dabbd71e41845004352179ead, type: 2}
   - {fileID: 11400000, guid: 1678e9a51f69ef94faaf031586718480, type: 2}
   - {fileID: 11400000, guid: 18acf61d351473f4baab04824e059f18, type: 2}
+  - {fileID: 11400000, guid: a5984c25813f0e84dba495ffdd8dd6ba, type: 2}
+  - {fileID: 11400000, guid: 38c843d7dc7e85246a6d20aad81215bf, type: 2}
+  - {fileID: 11400000, guid: c602e8008b049e7429d00295c5c30537, type: 2}
   cardHolder: {fileID: 1566539064}
 --- !u!4 &1701987700
 Transform:

@@ -36,7 +36,11 @@ public class EffectManager : MonoBehaviour
 
     public void RemoveEffect(Effect effect)
     {
-        effectPool.Remove(effect);
+        if (effect.spawnOnce)
+        {
+            effectPool.Remove(effect);
+        }
+
         cardHolder.SetActive(false);
     }
 

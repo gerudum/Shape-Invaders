@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 {
     public Vector3 target;
     public Projectile projectile;
-    public float damageModifier;
+    public float damageModifier = 1f;
 
     [HideInInspector]
     public string parent;
