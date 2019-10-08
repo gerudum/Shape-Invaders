@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     //Bullet and Firepoint
+    public GameObject player;
     public GameObject bullet;
     public GameObject specialBullet;
 
@@ -61,15 +62,8 @@ public class Weapon : MonoBehaviour
         specialBulletScript.tag = parent;
         specialBulletScript.perpetuate = true;
 
-        if (parent != "Enemy")
-        {
-            bulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
-            specialBulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
-        } else
-        {
-            bulletScript.damageModifier = 1;
-            specialBulletScript.damageModifier = 1;
-        }
+        bulletScript.damageModifier = player.GetComponent<PlayerController>().damageModifier;
+        specialBulletScript.damageModifier = player.GetComponent<PlayerController>().damageModifier;
 
         foreach (Effect effect in effects)
         {

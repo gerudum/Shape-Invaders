@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9351fb7a64eaa7a47b7fc3d977292269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4789079300280188507}
   bullet: {fileID: 465380321599897547, guid: 2c15548693f1a4246a88db9031f4eda2, type: 3}
   specialBullet: {fileID: 4626384435679887750, guid: fe8bd4f7959a0d847a6f0e5ff3b70a67,
     type: 3}
