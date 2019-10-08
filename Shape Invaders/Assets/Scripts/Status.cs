@@ -8,6 +8,13 @@ public class Status : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) return;
+        if (collision.gameObject.GetComponent<StatusEffect>())
+        {
+            if(collision.gameObject.GetComponent<StatusEffect>().effect == effect)
+            {
+                return;
+            }
+        }
 
         collision.gameObject.AddComponent<StatusEffect>().effect = effect;
         GameObject visual = Instantiate(effect.visualEffect, collision.gameObject.transform.position, effect.visualEffect.transform.rotation);

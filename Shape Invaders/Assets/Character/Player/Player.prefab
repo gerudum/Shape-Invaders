@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4591016215798633951}
   m_Layer: 0
   m_Name: Cannon
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,9 +127,11 @@ MonoBehaviour:
   bullet: {fileID: 465380321599897547, guid: 2c15548693f1a4246a88db9031f4eda2, type: 3}
   specialBullet: {fileID: 4626384435679887750, guid: fe8bd4f7959a0d847a6f0e5ff3b70a67,
     type: 3}
-  lastBullet: {fileID: 0}
   firePoint: {fileID: 4051579070663012807}
   chargeTime: 3
+  bulletPrefab: {fileID: 0}
+  specialBulletPrefab: {fileID: 0}
+  shootCount: 1
   effects: []
 --- !u!1 &4789079300280188507
 GameObject:

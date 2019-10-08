@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8024589913216300064}
   m_Layer: 0
   m_Name: ExplosiveShot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,4 +236,5 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   projectile: {fileID: 11400000, guid: b953377c569bceb4f9536458ac304a4f, type: 2}
   damageModifier: 1
-  parent: 
+  parent: Player
+  perpetuate: 0

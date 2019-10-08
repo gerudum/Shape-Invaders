@@ -185,6 +185,7 @@ MonoBehaviour:
   fireDelay: 3
   shootRange: 6
   fireCountdown: 0
+  ragdoll: 0
   weapon: {fileID: 3803952628825261817}
 --- !u!1 &1194674553513452890
 GameObject:
@@ -199,7 +200,7 @@ GameObject:
   - component: {fileID: 3803952628825261817}
   m_Layer: 0
   m_Name: Cannon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,10 +281,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9351fb7a64eaa7a47b7fc3d977292269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 465380321599897547, guid: 2c15548693f1a4246a88db9031f4eda2, type: 3}
-  specialBullet: {fileID: 0}
+  bullet: {fileID: 8078616033320692343, guid: ab030a127ea941e44a61cb78d9256e4f, type: 3}
+  specialBullet: {fileID: 5665469515100341987, guid: 33a4e738596b5384394032e85f62551e,
+    type: 3}
   firePoint: {fileID: 2672627616535025336}
   chargeTime: 3
+  bulletPrefab: {fileID: 0}
+  specialBulletPrefab: {fileID: 0}
+  shootCount: 1
+  effects: []
 --- !u!1 &3989541557537403181
 GameObject:
   m_ObjectHideFlags: 0

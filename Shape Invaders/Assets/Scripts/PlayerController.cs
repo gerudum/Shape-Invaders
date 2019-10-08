@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             anim.Play("Fire", -1, 0);
-            weapon.Fire("Player",Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            weapon.Fire(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
 
         if (Input.GetMouseButton(0))
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
             if(chargeup >= weapon.chargeTime)
             {
                 anim.Play("Fire", -1, 0);
-                weapon.ChargedShot("Player", Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                weapon.ChargedShot(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 player.cam.Shake(0.5f, 0.5f);
                 charged = false;
             }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8780928401378559339}
   m_Layer: 0
   m_Name: Pea
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
   projectile: {fileID: 11400000, guid: 00d4f9843ef926e4ca9d133c646d9e21, type: 2}
-  parent: 
+  damageModifier: 1
+  parent: Player
 --- !u!95 &8780928401378559339
 Animator:
   serializedVersion: 3

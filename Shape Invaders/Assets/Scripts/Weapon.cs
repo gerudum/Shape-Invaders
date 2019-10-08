@@ -8,20 +8,82 @@ public class Weapon : MonoBehaviour
     public GameObject bullet;
     public GameObject specialBullet;
 
-    [HideInInspector]
-    public GameObject lastBullet;
-
     public Transform firePoint;
 
     public float chargeTime = 3f;
+    public GameObject bulletPrefab;
+    public GameObject specialBulletPrefab;
 
-    //Special Upgrades
+    public int shootCount = 1;
+    private Projectile bulletProjectile;
+    private Projectile specialProjectile;
     public List<Effect> effects = new List<Effect>();
+
+    public void Start()
+    {
+        if(this.gameObject.tag == "Enemy")
+        {
+            EnemyBullet("Enemy");
+        } else
+        {
+            NewBullet("Player");
+        } 
+    }
+
+    public void EnemyBullet(string parent)
+    {
+        bulletPrefab = bullet;
+        specialBulletPrefab = specialBullet;
+
+        bulletProjectile = bulletPrefab.GetComponent<Bullet>().projectile;
+        specialProjectile = specialBulletPrefab.GetComponent<Bullet>().projectile;
+    }
+
+    public void NewBullet(string parent)
+    {
+        Vector3 nowwhere = new Vector3(1000, 1000, 1000);
+        bulletPrefab = Instantiate(bullet,nowwhere,bullet.transform.rotation);
+        specialBulletPrefab = Instantiate(specialBullet,nowwhere,specialBullet.transform.rotation);
+
+        //Normal Bullets
+        Bullet bulletScript = bulletPrefab.GetComponent<Bullet>();
+        bulletProjectile = bulletScript.projectile;
+
+        bulletScript.parent = parent;
+        bulletPrefab.tag = parent;
+        bulletScript.perpetuate = true;
+
+        //Special Bullets
+        Bullet specialBulletScript = specialBulletPrefab.GetComponent<Bullet>();
+        specialProjectile = specialBulletScript.projectile;
+
+        specialBulletScript.parent = parent;
+        specialBulletScript.tag = parent;
+        specialBulletScript.perpetuate = true;
+
+        if (parent != "Enemy")
+        {
+            bulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
+            specialBulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
+        } else
+        {
+            bulletScript.damageModifier = 1;
+            specialBulletScript.damageModifier = 1;
+        }
+
+        foreach (Effect effect in effects)
+        {
+            if (effect.effect == Effect.Effects.Status)
+            {
+                bulletPrefab.AddComponent<Status>().effect = effect;
+                specialBulletPrefab.AddComponent<Status>().effect = effect;
+            }
+        }
+    }
 
     public void AddEffect(Effect effect)
     {
         effects.Add(effect);
-
         if(effect.newBullet != null)
         {
             bullet = effect.newBullet;
@@ -31,91 +93,76 @@ public class Weapon : MonoBehaviour
             specialBullet = effect.newChargedBullet;
         }
 
-        if(effect.effect == Effect.Effects.Statup)
+        switch (effect.effect)
         {
-            switch (effect.stat)
-            {
-                case Effect.Stats.Health:
-                    Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-                    player.TakeDamage(-effect.strength);
-                break;
-                case Effect.Stats.Speed:
-                    PlayerController playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-                    playerController.moveSpeed += effect.strength;
-                break;
-                case Effect.Stats.Damage:
-                    PlayerController playerCon = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-                    playerCon.damageModifier += effect.strength;
-                break;
-            }
+            case Effect.Effects.Multishot:
+                shootCount += 1;
+            break;
+            case Effect.Effects.Status:
+                // bulletPrefab.AddComponent<Status>().effect = effect;
+                //specialBulletPrefab.AddComponent<Status>().effect = effect;
+                NewBullet("Player");
+            break;
+            case Effect.Effects.Bullet:
+                NewBullet("Player");
+            break;
+            case Effect.Effects.Statup:
+                switch (effect.stat)
+                {
+                    case Effect.Stats.Health:
+                        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+                        player.TakeDamage(-effect.strength);
+                        break;
+                    case Effect.Stats.Speed:
+                        PlayerController playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+                        playerController.moveSpeed += effect.strength;
+                        break;
+                    case Effect.Stats.Damage:
+                        PlayerController playerCon = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+                        playerCon.damageModifier += effect.strength;
+                        break;
+                }
 
-            effects.Remove(effect);
+                effects.Remove(effect);
+           break;
         }
     }
 
     //Fire Projectile
-    public void Fire(string parent, Vector3 target)
+    public void Fire(Vector3 target)
     {
-       
-        GameObject newBullet = Instantiate(bullet, firePoint.position, firePoint.transform.rotation);
-
-        //Aim towards mouse
-        Bullet bulletScript = newBullet.GetComponent<Bullet>();
-
-        bulletScript.Target(target);
-        bulletScript.parent = parent;
-        bulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
-        newBullet.tag = parent;
-
-        AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);
-
-        Instantiate(bulletScript.projectile.fireEffect, firePoint.position, firePoint.transform.rotation);
-
-        lastBullet = newBullet;
-
-        foreach(Effect effect in effects)
-        {
-            effect.DoEffect(this);
-        }
-    }
-
-    public void MirrorFire(string parent, Vector3 target)
-    {
-        Vector3 offset = firePoint.position - new Vector3(0, -0.5f, 0);
-        GameObject newBullet = Instantiate(bullet, offset, firePoint.transform.rotation);
+        //Shoot bullets
+        GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.transform.rotation);
+        newBullet.SendMessage("Target", target, SendMessageOptions.DontRequireReceiver);
         
+        if(shootCount > 1)
+        {
+            StartCoroutine("LaunchBullet", target);
+        }
 
         //Aim towards mouse
-        Bullet bulletScript = newBullet.GetComponent<Bullet>();
+        AudioManager.instance.PlaySound(bulletProjectile.fireSound);
 
-        bulletScript.Target(target);
-        bulletScript.parent = parent;
-        bulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
-        newBullet.tag = parent;
-
-        AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);
-
-  
-        Instantiate(bulletScript.projectile.fireEffect, offset, firePoint.transform.rotation);
-
-        lastBullet = newBullet;
+        Instantiate(bulletProjectile.fireEffect, firePoint.position, firePoint.transform.rotation);
     }
 
-    public void ChargedShot(string parent, Vector3 target)
+    public IEnumerator LaunchBullet(Vector3 target)
     {
+        yield return new WaitForSeconds(0.03f);
 
-        GameObject newBullet = Instantiate(specialBullet, firePoint.position, specialBullet.transform.rotation);
+        GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.transform.rotation);
+        newBullet.SendMessage("Target", target, SendMessageOptions.DontRequireReceiver);
 
-        //Aim towards mouse
-        Bullet bulletScript = newBullet.GetComponent<Bullet>();
+        AudioManager.instance.PlaySound(bulletProjectile.fireSound);
+    }
 
-        bulletScript.Target(target);
-        bulletScript.parent = parent;
-        bulletScript.damageModifier = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().damageModifier;
-        newBullet.tag = parent;
+    public void ChargedShot(Vector3 target)
+    {
+        GameObject newBullet = Instantiate(specialBulletPrefab, firePoint.position, specialBullet.transform.rotation);
+        newBullet.SendMessage("Target", target, SendMessageOptions.DontRequireReceiver);
 
-        AudioManager.instance.PlaySound(bulletScript.projectile.fireSound);
+        AudioManager.instance.PlaySound(specialProjectile.fireSound);
 
-        Instantiate(bulletScript.projectile.fireEffect, firePoint.position, specialBullet.transform.rotation);
+        Instantiate(specialProjectile.fireEffect, firePoint.position, specialBullet.transform.rotation);
     }
 }

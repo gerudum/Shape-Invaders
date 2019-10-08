@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6991286995744900203}
   m_Layer: 0
   m_Name: VortexShot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,7 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
   projectile: {fileID: 11400000, guid: d502e4f49ad249f4d90e1c3dae8e4612, type: 2}
-  parent: 
+  damageModifier: 2
+  parent: Player
+  perpetuate: 0
 --- !u!95 &7143983313950096852
 Animator:
   serializedVersion: 3
@@ -252,7 +254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 8
   strength: 400
-  pulseRate: 2
 --- !u!1001 &5155660583986742767
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class Bullet : MonoBehaviour
 
     public string parent;
 
+    public bool perpetuate;
+
     private Rigidbody2D rb;
     private Vector3 dir;
     private Animator anim;
@@ -34,10 +36,17 @@ public class Bullet : MonoBehaviour
     public void Target(Vector3 newTarget)
     {
         target = newTarget;
+        perpetuate = false;
     }
 
     public void FixedUpdate()
     {
+        if (perpetuate)
+        {
+            anim.SetFloat("duration", 1);
+            return;
+        }
+
         rb.velocity = dir * projectile.speed;
         anim.SetFloat("duration", lifeTime - Time.time);
     }
@@ -54,6 +63,7 @@ public class Bullet : MonoBehaviour
         collision.SendMessage("TakeDamage", projectile.damage * damageModifier,SendMessageOptions.DontRequireReceiver);
 
         if(!projectile.piercing)
+      
         Death();
     }
 
@@ -65,7 +75,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-   
-        Damage(collision);
+        if(!perpetuate)
+            Damage(collision);
     }
 }

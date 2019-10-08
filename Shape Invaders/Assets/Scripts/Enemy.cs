@@ -53,6 +53,10 @@ public class Enemy : MonoBehaviour
     public virtual void LoseSpeed(float strength)
     {
         moveSpeed -= strength;
+        if(moveSpeed <= 0)
+        {
+            moveSpeed = 0;
+        }
     }
 
     public virtual IEnumerator Ragdoll(float duration)
@@ -82,7 +86,7 @@ public class Enemy : MonoBehaviour
 
     public void Fire()
     {
-        weapon.Fire("Enemy", player.transform.position);
+        weapon.Fire(player.transform.position);
         anim.Play("Shoot", -1, 0);
     }
 
