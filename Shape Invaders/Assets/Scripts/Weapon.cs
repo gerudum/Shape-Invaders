@@ -18,8 +18,8 @@ public class Weapon : MonoBehaviour
     public int shootCount = 1;
     private Projectile bulletProjectile;
     private Projectile specialProjectile;
-    public List<Effect> effects = new List<Effect>();
 
+    public List<Effect> effects = new List<Effect>();
     public void Start()
     {
         if(this.gameObject.tag == "Enemy")
@@ -101,19 +101,17 @@ public class Weapon : MonoBehaviour
                 NewBullet("Player");
             break;
             case Effect.Effects.Statup:
+                PlayerController controller = player.GetComponent<PlayerController>();
                 switch (effect.stat)
                 {
                     case Effect.Stats.Health:
-                        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-                        player.TakeDamage(-effect.strength);
+                        player.SendMessage("TakeDamage", -effect.strength);
                         break;
                     case Effect.Stats.Speed:
-                        PlayerController playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-                        playerController.moveSpeed += effect.strength;
+                        controller.moveSpeed += effect.strength;
                         break;
                     case Effect.Stats.Damage:
-                        PlayerController playerCon = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-                        playerCon.damageModifier += effect.strength;
+                        controller.damageModifier += effect.strength;
                         break;
                 }
 

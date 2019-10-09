@@ -12,7 +12,6 @@ public class EffectManager : MonoBehaviour
 
     public List<Effect> effectPool = new List<Effect>();
     public GameObject cardHolder;
-
     public void EnableCards()
     {
         cardHolder.SetActive(true);
